@@ -1,6 +1,6 @@
 {
     "name": "react-audio-assistant",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "description": "React component for web audio navigation and audio utilities",
     "main": "index.js",
     "scripts": {
@@ -13,9 +13,9 @@
         "navigation",
         "web"
     ],
-    "repository" : {
-        "type" : "git",
-        "url" : "https://github.com/WebPaquitos/react-audio-navigation.git"
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/WebPaquitos/react-audio-navigation.git"
     },
     "author": "Web Paquitos",
     "license": "MIT"
