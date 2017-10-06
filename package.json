@@ -9,6 +9,7 @@
     },
     "files": [
         "index.js",
+        ".babelrc",
         "src"
     ],
     "keywords": [
