@@ -96,8 +96,10 @@ class Jarvis extends Component {
 
     renderIcon() {
         const { listening } = this.props;
-        if (listening) return <FaSoundcloud key={1} className="icon-animate"/>;
-        return <FaMicrophone key={2}/>;
+        if (listening) return 'Listening';
+        return 'Talk';
+        // if (listening) return <FaSoundcloud key={1} className="icon-animate"/>;
+        // return <FaMicrophone key={2}/>;
     }
 
     renderFeedback() {
