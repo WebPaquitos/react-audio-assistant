@@ -8,8 +8,8 @@
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "files": [
-        "src",
-        "node_modules"
+        "index.js",
+        "src"
     ],
     "keywords": [
         "react",
