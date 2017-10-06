@@ -1,3 +1,5 @@
-exports.printMsg = function() {
-    console.log("This is a message from the demo package");
-}
+import ReactAudioAssistant from './src/components/react_audio_assistant';
+import Reducer from './src/reducers/react_audio_assistant_reducer';
+
+exports.ReactAudioAssistant = ReactAudioAssistant;
+exports.Reducer = Reducer;

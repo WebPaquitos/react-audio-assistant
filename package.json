@@ -18,5 +18,14 @@
         "url": "https://github.com/WebPaquitos/react-audio-navigation.git"
     },
     "author": "Web Paquitos",
-    "license": "MIT"
+    "license": "MIT",
+    "dependencies": {
+        "react": "^16.0.0",
+        "react-dom": "^16.0.0",
+        "react-redux": "^5.0.6",
+        "react-icons": "^2.2.5",
+        "redux": "^3.7.2",
+        "axios": "^0.16.2",
+        "styled-components": "^2.1.2"
+    }
 }
