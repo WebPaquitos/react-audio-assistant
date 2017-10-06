@@ -1,6 +1,6 @@
 {
     "name": "react-audio-assistant",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "React component for web audio navigation and audio utilities",
     "main": "index.js",
     "scripts": {
