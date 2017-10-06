@@ -10,6 +10,9 @@
         "react",
         "redux",
         "audio",
+        "sound",
+        "interaction",
+        "ai",
         "navigation",
         "web"
     ],
@@ -17,7 +20,14 @@
         "type": "git",
         "url": "https://github.com/WebPaquitos/react-audio-navigation.git"
     },
-    "author": "Web Paquitos",
+    "bugs": {
+        "url" : "https://github.com/WebPaquitos/react-audio-navigation/issues",
+        "email" : "web.paquitos@gmail.com"
+    },
+    "author": {
+        "name": "Web Paquitos",
+        "email": "web.paquitos@gmail.com"
+    },
     "license": "MIT",
     "dependencies": {
         "react": "^16.0.0",
