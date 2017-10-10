@@ -6,7 +6,7 @@ import {
 } from './types';
 import GoogleNowSound from '../assets/sounds/google_now_voice.mp3';
 
-const API_ENDPOINT = 'http://localhost:7777/api';
+const API_ENDPOINT = 'http://raaapi.luisdev.eu/api';
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 recognition.lang = 'en-EN';
@@ -41,8 +41,8 @@ export const listen = () => {
             const last = results.length - 1;
             const text = results[last][0].transcript;
             axios.post(`${API_ENDPOINT}/request`, { text })
-                .then(response => handleSuccessSpeechRequest(dispatch, response))
-                .catch(response => handleErrorSpeechRequest(dispatch, response));
+            .then(response => handleSuccessSpeechRequest(dispatch, response))
+            .catch(response => handleErrorSpeechRequest(dispatch, response));
         };
         recognition.onspeechend = () => {
             recognition.stop();
