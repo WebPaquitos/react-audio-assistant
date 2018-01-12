@@ -66,9 +66,8 @@
         "react-icons": "^2.2.5",
         "redux": "^3.7.2",
         "axios": "^0.16.2",
-        "styled-components": "^2.1.2"
-    },
-    "dependencies": {
-        "babel-runtime": "^6.6.1"
+        "styled-components": "^2.1.2",
+        "babel-runtime": "^6.6.1",
+        "prop-types": "latest"
     }
 }
