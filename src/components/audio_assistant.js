@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { FaMicrophone, FaSoundcloud } from 'react-icons/lib/fa';
 import PropTypes from 'prop-types';
 
-import { listen, stopListening, navigate } from '../actions';
+import { listen, stopListening, navigateAction } from '../actions';
 
 const StyledAudioAssistant = styled.div`
     display: flex;
@@ -88,8 +88,8 @@ class AudioAssistant extends Component {
     }
 
     componentDidUpdate() {
-        const { nextTarget, navigate } = this.props;
-        if (nextTarget) navigate(nextTarget);
+        const { nextTarget, navigate, navigateAction } = this.props;
+        if (nextTarget) navigateAction(nextTarget, navigate);
     }
 
     onListen() {
@@ -140,5 +140,5 @@ function mapStateToProps({ audioAssistant: { listening, currentTarget, nextTarge
 export default connect(mapStateToProps, {
     listen,
     stopListening,
-    navigate,
+    navigateAction,
 })(AudioAssistant);

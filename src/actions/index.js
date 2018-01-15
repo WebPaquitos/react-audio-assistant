@@ -51,9 +51,9 @@ export const listen = () => {
     };
 };
 
-export const navigate = (nextTarget, callback) => {
+export const navigateAction = (nextTarget, callback) => {
     return (dispatch) => {
-        callback();
+        callback(nextTarget);
         dispatch({
             type: NAVIGATION_DONE,
             payload: nextTarget,
