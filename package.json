@@ -1,7 +1,15 @@
 {
     "name": "react-audio-assistant",
-    "version": "0.3.3",
+    "version": "0.3.4",
     "description": "React component for web audio navigation and audio utilities",
+    "scripts": {
+        "prepublish": "cp -R src/assets dist && babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
+        "lint": "eslint ./src",
+        "lintfix": "eslint ./src --fix",
+        "testonly": "mocha $npm_package_options_mocha",
+        "test": "npm run lint && npm run testonly",
+        "test-watch": "npm run testonly -- --watch --watch-extensions js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/WebPaquitos/react-audio-assistant.git"
@@ -28,14 +36,6 @@
     ],
     "options": {
         "mocha": "--require scripts/mocha_runner src/**/__tests__/**/*.js"
-    },
-    "scripts": {
-        "prepublish": "babel --plugins transform-es2015-modules-umd src --ignore __tests__ --out-dir ./dist",
-        "lint": "eslint ./src",
-        "lintfix": "eslint ./src --fix",
-        "testonly": "mocha $npm_package_options_mocha",
-        "test": "npm run lint && npm run testonly",
-        "test-watch": "npm run testonly -- --watch --watch-extensions js"
     },
     "devDependencies": {
         "babel-cli": "6.24.1",
