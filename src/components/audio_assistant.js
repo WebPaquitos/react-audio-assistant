@@ -79,6 +79,7 @@ const StyledAudioAssistant = styled.div`
 
 class AudioAssistant extends Component {
     static propTypes = {
+        token: PropTypes.string.isRequired,
         navigate: PropTypes.func.isRequired,
     };
 
@@ -93,8 +94,8 @@ class AudioAssistant extends Component {
     }
 
     onListen() {
-        const { listening } = this.props;
-        if (!listening) this.props.listen();
+        const { listening, token } = this.props;
+        if (!listening) this.props.listen(token);
         else this.props.stopListening();
     }
 

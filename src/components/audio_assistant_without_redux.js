@@ -86,6 +86,7 @@ const StyledAudioAssistant = styled.div`
 
 export default class AudioAssistant extends Component {
     static propTypes = {
+        token: PropTypes.string.isRequired,
         navigate: PropTypes.func.isRequired,
     };
 
@@ -113,12 +114,13 @@ export default class AudioAssistant extends Component {
     }
 
     onListen() {
+        const { token } = this.props;
         const { listening } = this.state;
-        if (!listening) this.listen();
+        if (!listening) this.listen(token);
         else this.stopListening();
     }
 
-    listen() {
+    listen(token) {
         this.setState({
             listening: true,
             repeat: false,
@@ -129,9 +131,13 @@ export default class AudioAssistant extends Component {
         recognition.onresult = ({ results }) => {
             const last = results.length - 1;
             const text = results[last][0].transcript;
-            axios.post(`${API_ENDPOINT}/request`, { text })
-                .then(response => this.handleSuccessSpeechRequest(response))
-                .catch(response => this.handleErrorSpeechRequest(response));
+            axios.post(`${API_ENDPOINT}/request`, { text }, {
+                headers: {
+                    'dialog-flow-token': token,
+                },
+            })
+            .then(response => this.handleSuccessSpeechRequest(response))
+            .catch(response => this.handleErrorSpeechRequest(response));
         };
         recognition.onspeechend = () => {
             recognition.stop();

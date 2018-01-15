@@ -1,6 +1,3 @@
-#### Disclaimer
-This package is still in a pre-alpha release, so any issues, problems or doubts, let us know on our email or on this project issues.
-
 # React Audio Assistant
 
 This packages' purpose is to enable audio navigation and interaction in your website/webapp.
@@ -14,61 +11,9 @@ An option to integrate with [redux](http://redux.js.org/) is also present.
 ## Instructions
 
 1. The first step in the process is to create an account at [DialogFlow](https://dialogflow.com) and configure an agent suited for your website/webapp).
-2. In order to use this package, a register is required in our backoffice page [here]() where you will provide us your access token for your DialogFlow setup.
-3. After the register is done, an API key is provided to you with which you are going to make the authenticated requests to our server.
-4. `yarn add react-audio-assistant`
+2. Get the client access token for your DialogFlow app to use later in this package.
+4. `yarn add react-audio-assistant` or `npm i --save react-audio-assistant`
 5. Import the component and use it where you want in the page (the component is fixed positioned).
-
-## Demo Project
-
-A demo project is available [here](https://github.com/WebPaquitos/audio-navigation-client).
-
-A simple use case without Redux:
-```javascript
-import React, { Component } from 'react';
-import { ReactAudioAssistant } from 'react-audio-assistant';
-
-export default class YourComponent extends Component {
-    render() {
-        return (
-            <div>
-                <p>This is a div with my custom component stuff</p>
-                <ReactAudioAssistant
-                    token={YOUR_ASSIGNED_TOKEN}
-                    navigate={(target) => console.log(target)}/>
-            </div>
-        );
-    }
-}
-```
-
-A simple use case with Redux:
-```javascript
-// somewhere in your components
-import React, { Component } from 'react';
-import { ReactAudioAssistantWithRedux } from 'react-audio-assistant';
-
-export default class YourComponent extends Component {
-    render() {
-        return (
-            <div>
-                <p>This is a div with my custom component stuff</p>
-                <ReactAudioAssistant
-                    token={YOUR_ASSIGNED_TOKEN}
-                    navigate={(target) => console.log(target)}/>
-            </div>
-        );
-    }
-}
-
-// in your main reducer
-import { combineReducers } from 'redux';
-import { audioAssistant } from 'react-audio-assistant';
-
-export default combineReducers({
-    audioAssistant,
-});
-```
 
 ## Creating a DialogFlow Agent
 
@@ -95,13 +40,60 @@ Enter in the entity details screen and configure your entity accordingly, traini
 
 ![Intent Creation](entities_details.png)
 
-After all this is done, access the settings page for the project and copy the client access token, you will need it to register our BackOffice.
+After all this is done, access the settings page for the project and copy the client access token, you will need it to make the requests to the platform.
 
 ![Intent Creation](settings.png)
 
-## Registering in the Back Office
+## Demo Project
 
-TODO
+A demo project is available [here](https://github.com/WebPaquitos/audio-navigation-client).
+
+A simple use case without Redux:
+```javascript
+import React, { Component } from 'react';
+import { ReactAudioAssistant } from 'react-audio-assistant';
+
+export default class YourComponent extends Component {
+    render() {
+        return (
+            <div>
+                <p>This is a div with my custom component stuff</p>
+                <ReactAudioAssistant
+                    token={YOUR_DIALOG_FLOW_TOKEN}
+                    navigate={(target) => console.log(target)}/>
+            </div>
+        );
+    }
+}
+```
+
+A simple use case with Redux:
+```javascript
+// somewhere in your components
+import React, { Component } from 'react';
+import { ReactAudioAssistantWithRedux } from 'react-audio-assistant';
+
+export default class YourComponent extends Component {
+    render() {
+        return (
+            <div>
+                <p>This is a div with my custom component stuff</p>
+                <ReactAudioAssistant
+                    token={YOUR_DIALOG_FLOW_TOKEN}
+                    navigate={(target) => console.log(target)}/>
+            </div>
+        );
+    }
+}
+
+// in your main reducer
+import { combineReducers } from 'redux';
+import { audioAssistant } from 'react-audio-assistant';
+
+export default combineReducers({
+    audioAssistant,
+});
+```
 
 ## License
 
