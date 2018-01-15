@@ -13,7 +13,7 @@ const recognition = new SpeechRecognition();
 recognition.lang = 'en-EN';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
-const StyledJarvis = styled.div`
+const StyledAudioAssistant = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +84,7 @@ const StyledJarvis = styled.div`
     }
 `;
 
-export default class Jarvis extends Component {
+export default class AudioAssistant extends Component {
     static propTypes = {
         navigate: PropTypes.func.isRequired,
     };
@@ -186,7 +186,7 @@ export default class Jarvis extends Component {
     render() {
         const { listening, repeat, sayTarget } = this.state;
         return (
-            <StyledJarvis onClick={this.onListen} listening={listening}>
+            <StyledAudioAssistant onClick={this.onListen} listening={listening}>
                 <div className="icon">
                     {this.renderIcon()}
                 </div>
@@ -194,7 +194,7 @@ export default class Jarvis extends Component {
                     <div className="simulated-button"/>
                     {this.renderFeedback()}
                 </div>
-            </StyledJarvis>
+            </StyledAudioAssistant>
         );
     }
 }

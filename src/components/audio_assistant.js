@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { FaMicrophone, FaSoundcloud } from 'react-icons/lib/fa';
+import PropTypes from 'prop-types';
+
 import { listen, stopListening, navigate } from '../actions';
 
-const StyledJarvis = styled.div`
+const StyledAudioAssistant = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,17 +77,19 @@ const StyledJarvis = styled.div`
     }
 `;
 
-class Jarvis extends Component {
+class AudioAssistant extends Component {
+    static propTypes = {
+        navigate: PropTypes.func.isRequired,
+    };
+
     constructor(props) {
         super(props);
         this.onListen = this.onListen.bind(this);
     }
 
     componentDidUpdate() {
-        const { nextTarget, history } = this.props;
-        if (nextTarget) {
-            this.props.navigate(nextTarget, () => history.push(`/${nextTarget}`));
-        }
+        const { nextTarget, navigate } = this.props;
+        if (nextTarget) navigate(nextTarget);
     }
 
     onListen() {
@@ -110,7 +114,7 @@ class Jarvis extends Component {
     render() {
         const { listening, repeat, sayTarget } = this.props;
         return (
-            <StyledJarvis onClick={this.onListen} listening={listening}>
+            <StyledAudioAssistant onClick={this.onListen} listening={listening}>
                 <div className="icon">
                     {this.renderIcon()}
                 </div>
@@ -118,12 +122,12 @@ class Jarvis extends Component {
                     <div className="simulated-button"/>
                     {this.renderFeedback()}
                 </div>
-            </StyledJarvis>
+            </StyledAudioAssistant>
         );
     }
 }
 
-function mapStateToProps({ jarvis: { listening, currentTarget, nextTarget, repeat, sayTarget } }) {
+function mapStateToProps({ audioAssistant: { listening, currentTarget, nextTarget, repeat, sayTarget } }) {
     return {
         listening,
         currentTarget,
@@ -137,4 +141,4 @@ export default connect(mapStateToProps, {
     listen,
     stopListening,
     navigate,
-})(Jarvis);
+})(AudioAssistant);
