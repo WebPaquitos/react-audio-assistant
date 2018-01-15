@@ -1,6 +1,6 @@
 {
     "name": "react-audio-assistant",
-    "version": "0.3.2",
+    "version": "0.3.3",
     "description": "React component for web audio navigation and audio utilities",
     "repository": {
         "type": "git",
@@ -54,20 +54,20 @@
         "jsdom": "^8.1.0",
         "mocha": "^2.4.5",
         "nodemon": "^1.9.1",
-        "react-addons-test-utils": "^15.0.0",
         "react": "^15.0.0",
+        "react-addons-test-utils": "^15.0.0",
         "react-dom": "^15.0.0",
         "sinon": "^1.17.3"
     },
     "peerDependencies": {
+        "axios": "^0.16.2",
+        "babel-runtime": "^6.6.1",
+        "prop-types": "latest",
         "react": "^16.0.0",
         "react-dom": "^16.0.0",
-        "react-redux": "^5.0.6",
         "react-icons": "^2.2.5",
+        "react-redux": "^5.0.6",
         "redux": "^3.7.2",
-        "axios": "^0.16.2",
-        "styled-components": "^2.1.2",
-        "babel-runtime": "^6.6.1",
-        "prop-types": "latest"
+        "styled-components": "^2.1.2"
     }
 }
