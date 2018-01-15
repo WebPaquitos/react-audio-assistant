@@ -48,6 +48,8 @@ After all this is done, access the settings page for the project and copy the cl
 
 A demo project is available [here](https://github.com/WebPaquitos/audio-navigation-client).
 
+![Example](example.gif)
+
 A simple use case without Redux:
 ```javascript
 import React, { Component } from 'react';
