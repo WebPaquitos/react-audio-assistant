@@ -1,4 +1,4 @@
-# React Audio Assistant
+# React Audio Assistant [![npm version](https://badge.fury.io/js/react-audio-assistant.svg)](https://badge.fury.io/js/react-audio-assistant) [![npm package](https://img.shields.io/npm/dm/react-audio-assistant.svg)](https://www.npmjs.org/package/react-audio-assistant)
 
 This packages' purpose is to enable audio navigation and interaction in your website/webapp.
 
