@@ -8,6 +8,11 @@ This package is heavily dependent on [DialogFlow](https://dialogflow.com).
 
 An option to integrate with [redux](http://redux.js.org/) is also present.
 
+## WARNING: Experimental technology
+
+This package is currently only working on the Chrome Browser.
+Other browsers are yet to give support to the Web Speech Recognition API that has been in development for quite some time.
+
 ## Instructions
 
 1. The first step in the process is to create an account at [DialogFlow](https://dialogflow.com) and configure an agent suited for your website/webapp).
